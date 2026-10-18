@@ -1,0 +1,92 @@
+/* north9.jp と同じ色と文字（TENPIN は north9 のプロダクト） */
+:root {
+  --bg: #0b1020;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-strong: rgba(255, 255, 255, 0.07);
+  --line: rgba(255, 255, 255, 0.10);
+  --line-strong: rgba(255, 255, 255, 0.18);
+  --text: #e8ecf6;
+  --body: #c9d1e6;
+  --muted: #9aa6c2;
+  --faint: #6b7694;
+  --accent-a: #2ee6c5;
+  --accent-b: #7c8cff;
+  --accent: #5fd9e6;
+  --todo-bg: rgba(242, 184, 75, 0.18);
+  --todo-text: #f6cf7d;
+  --font: "Inter", "Segoe UI", system-ui, -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Noto Sans JP", Meiryo, sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(40% 420px at 12% 0, rgba(46, 230, 197, 0.14), transparent 70%),
+    radial-gradient(45% 460px at 88% 0, rgba(124, 140, 255, 0.18), transparent 70%),
+    var(--bg);
+  background-repeat: no-repeat;
+  color: var(--body);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+strong { color: var(--text); }
+.wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 16px; }
+@media (min-width: 720px) { .wrap { padding: 0 32px; } }
+
+/* ---- header ---- */
+header.site {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(11, 16, 32, 0.72);
+  backdrop-filter: saturate(140%) blur(12px);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.brand { color: var(--text); font-weight: 800; letter-spacing: 0.14em; font-size: 18px; }
+.brand:hover { text-decoration: none; }
+nav { display: flex; align-items: center; gap: 20px; font-size: 14px; }
+nav a { color: var(--muted); }
+nav a:hover { color: var(--text); text-decoration: none; }
+.by { color: var(--faint); font-size: 13px; }
+.by a { color: var(--muted); }
+
+/* ---- page ---- */
+main.wrap { padding-top: 72px; padding-bottom: 80px; }
+@media (max-width: 640px) { main.wrap { padding-top: 48px; } }
+h1 {
+  margin: 0 0 12px; color: var(--text);
+  font-size: clamp(30px, 6.5vw, 56px); line-height: 1.15; letter-spacing: 0.01em; font-weight: 800;
+}
+h1.wordmark { letter-spacing: 0.08em; }
+h1 .grad, .grad {
+  background: linear-gradient(100deg, var(--accent-a), var(--accent-b));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+h2 {
+  margin: 56px 0 16px; padding-top: 28px; border-top: 1px solid var(--line);
+  color: var(--text); font-size: 22px; line-height: 1.4; letter-spacing: -0.005em;
+}
+h3 { margin: 32px 0 8px; color: var(--text); font-size: 17px; }
+p, ul, ol { margin: 0 0 16px; }
+ul, ol { padding-left: 1.3em; }
+li { margin: 6px 0; }
+.expansion { color: var(--muted); font-size: 14px; letter-spacing: 0.02em; margin-bottom: 28px; }
+.lead { font-size: clamp(17px, 2.2vw, 20px); color: var(--text); }
+.meta { color: var(--muted); font-size: 14px; }
+.note { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px; }
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9em;
+  background: var(--surface-strong); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px;
+  overflow-wrap: anywhere; color: var(--text);
+}
+.todo { background: var(--todo-bg); color: var(--todo-text); padding: 0 6px; border-radius: 4px; font-weight: 600; }
+section.en { margin-top: 64px; }
+
+/* ---- footer ---- */
+footer.site { border-top: 1px solid var(--line); color: var(--faint); font-size: 13px; padding: 28px 0 48px; }
+footer.site p { margin: 4px 0; }
+footer.site a { color: var(--muted); }
